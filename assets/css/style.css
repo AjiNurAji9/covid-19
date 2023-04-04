@@ -518,15 +518,20 @@ tbody {
 }
 
 .blur {
-	background: #000;
-	position: fixed;
-	display: none;
-	width: 100%;
-	height: 100%;
-	z-index: 99;
-	left: 0;
-	top: 0;
-  opacity: .5;
+  background: #000;
+  position: fixed;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
 }
 
 /* reponsive */
@@ -591,23 +596,24 @@ tbody {
 	}
 
 	.header .nav-items.active .logo {
-		display: block;
-		padding: 30px 0;
+    padding: 30px 0;
     font-size: 25px;
 		transition: all .3s linear;
 		-webkit-transition: all .3s linear;
 		-moz-transition: all .3s linear;
 		-ms-transition: all .3s linear;
 		-o-transition: all .3s linear;
-}
-
-  .header .nav-items.active {
-		width: 80% !important;
-		visibility: visible;
   }
 
+  .header .nav-items.active {
+    width: 80% !important;
+		visibility: visible;
+  }
+  
 	.blur.active {
+    visibility: visible;
 		display: block;
+    opacity: .6;
 	}
 
   .header .nav-items a {
